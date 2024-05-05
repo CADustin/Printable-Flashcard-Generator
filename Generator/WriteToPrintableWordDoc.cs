@@ -27,9 +27,62 @@ namespace Generator
                 // Create the document structure and add some text.
                 mainPart.Document = new Document();
                 Body body = mainPart.Document.AppendChild(new Body());
-                Paragraph para = body.AppendChild(new Paragraph());
-                Run run = para.AppendChild(new Run());
-                run.AppendChild(new Text("Create text in body - CreateWordprocessingDocument"));
+
+                Table table = new();
+
+                TableProperties props = new(
+                    new TableBorders(
+                    new TopBorder
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Single),
+                        Size = 12
+                    },
+                    new BottomBorder
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Single),
+                        Size = 12
+                    },
+                    new LeftBorder
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Single),
+                        Size = 12
+                    },
+                    new RightBorder
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Single),
+                        Size = 12
+                    },
+                    new InsideHorizontalBorder
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Single),
+                        Size = 12
+                    },
+                    new InsideVerticalBorder
+                    {
+                        Val = new EnumValue<BorderValues>(BorderValues.Single),
+                        Size = 12
+                    }));
+
+                table.AppendChild<TableProperties>(props);
+
+                for (var i = 0; i < flashcards.Count; i++)
+                {
+                    var tr = new TableRow();
+                    var tcQuestion = new TableCell();
+                    tcQuestion.Append(new Paragraph(new Run(new Text(flashcards[i].Question))));
+                    tcQuestion.Append(new TableCellProperties(new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "50", }));
+
+                    tr.Append(tcQuestion);
+
+                    var tcAnswer = new TableCell();
+                    tcAnswer.Append(new Paragraph(new Run(new Text(flashcards[i].Answer))));
+                    tcAnswer.Append(new TableCellProperties(new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "50", }));
+                    tr.Append(tcAnswer);
+
+                    table.Append(tr);
+                }
+
+                mainPart.Document.Body.Append(table);
 
                 // Setup the page margins
                 PageMargin pageMargin1 = new PageMargin()
@@ -43,6 +96,8 @@ namespace Generator
                     Gutter = (UInt32Value)0U,
                 };
                 mainPart.Document.Append(pageMargin1);
+
+                mainPart.Document.Save();
             }
         }
     }

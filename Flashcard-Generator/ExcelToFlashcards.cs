@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Flashcard_Generator
 {
-    public class Class1
+    internal class ExcelToFlashcards
     {
+        string QuestionColumn { get; set; }
+        string AnswerColumn { get; set; }
     }
 }

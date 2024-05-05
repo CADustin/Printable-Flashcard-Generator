@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flashcard-Generator", "Flashcard-Generator.csproj", "{83440EC9-2673-4F7D-B6C9-6C686C4C8C65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flashcard-Generator", "Flashcard-Generator\Flashcard-Generator.csproj", "{83440EC9-2673-4F7D-B6C9-6C686C4C8C65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flashcard-Generator-Tests", "..\Flashcard-Generator-Tests\Flashcard-Generator-Tests.csproj", "{E3F5ADC3-4281-418B-B63E-BA5222108E27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flashcard-Generator-Tests", "Flashcard-Generator-Tests\Flashcard-Generator-Tests.csproj", "{E3F5ADC3-4281-418B-B63E-BA5222108E27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -24,7 +24,7 @@ namespace FlashcardGeneratorTests
             var generator = new ReadFromExcel("Question", "Answer");
             generator.ReadDataFromExcel(inputFile);
 
-            Assert.AreEqual(3, generator.Flashcards.Count, $"{generator.Flashcards}.Count");
+            Assert.AreEqual(10, generator.Flashcards.Count, $"{generator.Flashcards}.Count");
 
             Flashcard second = generator.Flashcards[1];
             Assert.AreEqual("question2", second.Question, nameof(second.Question));

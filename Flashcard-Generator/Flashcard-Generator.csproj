@@ -122,6 +122,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ExcelToFlashcards.cs" />
+    <Compile Include="Flashcard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Flashcard_Generator.rd.xml" />
   </ItemGroup>

@@ -12,7 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\Flashcard-Generator\stylecop.json" Link="stylecop.json" />
+    <None Remove="Data\ExcelDataset1.xlsx" />
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +33,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Data\ExcelDataset1.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Flashcard-Generator\Flashcard-Generator.csproj" />
   </ItemGroup>
 
 </Project>

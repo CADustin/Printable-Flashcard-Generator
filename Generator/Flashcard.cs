@@ -7,12 +7,12 @@ namespace Flashcard_Generator
     /// <summary>
     /// Flashcard object.
     /// </summary>
-    internal struct Flashcard
+    public struct Flashcard
     {
         /// <summary>
         /// Gets or sets the Question.
         /// </summary>
-        public string Question{ get; set; }
+        public string Question { get; set; }
 
         /// <summary>
         /// Gets or sets the Answer.

@@ -15,7 +15,8 @@ namespace FlashcardGeneratorTests
         public void TestMethod1(string questionColumnName, string answerColumnName)
         {
             var inputFile = new FileInfo("ExcelDataset1.xlsx");
-            var generator = new ExcelToFlashcards(inputFile, questionColumnName, answerColumnName);
+            var generator = new ExcelToFlashcards(questionColumnName, answerColumnName);
+            generator.ReadDataFromExcel(inputFile);
         }
     }
 }
